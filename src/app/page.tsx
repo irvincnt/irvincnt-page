@@ -1,7 +1,15 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Github, Linkedin, Mail, Phone, Globe, ArrowUpRight, Instagram } from "lucide-react"
+import { useState, useEffect } from "react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Phone,
+  Globe,
+  ArrowUpRight,
+  Instagram,
+} from "lucide-react";
 
 const translations = {
   es: {
@@ -66,7 +74,7 @@ const translations = {
     },
     footer: "Designed & Built by Irvin Contreras",
   },
-}
+};
 
 const experiences = {
   es: [
@@ -165,7 +173,7 @@ const experiences = {
       tech: ["React", "JavaScript", "SSO"],
     },
   ],
-}
+};
 
 const projects = {
   es: [
@@ -200,48 +208,74 @@ const projects = {
       link: "#",
     },
   ],
-}
+};
 
 const skills = {
   languages: ["JavaScript", "TypeScript", "HTML", "CSS", "SQL", "NoSQL"],
   frameworks: ["NextJS", "NestJS", "React", "NodeJS", "LitElement", "Polymer2"],
   databases: ["MongoDB", "PostgreSQL", "MySQL"],
-  technologies: ["Redux", "React Query", "Tailwind", "Sass", "Shadcn", "APIs", "Hooks"],
-  tools: ["Git", "GitHub", "Bitbucket", "Figma", "Jira", "AWS", "Vercel", "NPM"],
+  technologies: [
+    "Redux",
+    "React Query",
+    "Tailwind",
+    "Sass",
+    "Shadcn",
+    "APIs",
+    "Hooks",
+  ],
+  tools: [
+    "Git",
+    "GitHub",
+    "Bitbucket",
+    "Figma",
+    "Jira",
+    "AWS",
+    "Vercel",
+    "NPM",
+  ],
   practices: ["Agile", "Scrum", "SOLID", "TDD"],
-}
+};
 
 export default function Portfolio() {
-  const [lang, setLang] = useState<"es" | "en">("es")
-  const [activeSection, setActiveSection] = useState("about")
-  const t = translations[lang]
-  const exp = experiences[lang]
-  const proj = projects[lang]
+  const [lang, setLang] = useState<"es" | "en">("es");
+  const [activeSection, setActiveSection] = useState("about");
+  const t = translations[lang];
+  const exp = experiences[lang];
+  const proj = projects[lang];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "experience", "skills", "projects", "education"]
-      const scrollPosition = window.scrollY + 200
+      const sections = [
+        "about",
+        "experience",
+        "skills",
+        "projects",
+        "education",
+      ];
+      const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section);
+            break;
           }
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-  }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-300">
@@ -253,13 +287,24 @@ export default function Portfolio() {
               <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
                 <a href="/">Irvin Giovanni Contreras García</a>
               </h1>
-              <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">{t.hero.title}</h2>
+              <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+                {t.hero.title}
+              </h2>
               <p className="mt-4 max-w-xs leading-normal">{t.hero.subtitle}</p>
 
               {/* Navigation */}
-              <nav className="nav hidden lg:block" aria-label="In-page jump links">
+              <nav
+                className="nav hidden lg:block"
+                aria-label="In-page jump links"
+              >
                 <ul className="mt-16 w-max">
-                  {["about", "experience", "skills", "projects", "education"].map((section) => (
+                  {[
+                    "about",
+                    "experience",
+                    "skills",
+                    "projects",
+                    "education",
+                  ].map((section) => (
                     <li key={section}>
                       <button
                         onClick={() => scrollToSection(section)}
@@ -274,7 +319,9 @@ export default function Portfolio() {
                         ></span>
                         <span
                           className={`nav-text text-xs font-bold uppercase tracking-widest ${
-                            activeSection === section ? "text-slate-200" : "text-slate-500 group-hover:text-slate-200"
+                            activeSection === section
+                              ? "text-slate-200"
+                              : "text-slate-500 group-hover:text-slate-200"
                           }`}
                         >
                           {t.nav[section as keyof typeof t.nav]}
@@ -335,7 +382,9 @@ export default function Portfolio() {
                 aria-label="Toggle language"
               >
                 <Globe className="h-5 w-5" />
-                <span className="text-xs font-bold uppercase">{lang === "es" ? "EN" : "ES"}</span>
+                <span className="text-xs font-bold uppercase">
+                  {lang === "es" ? "EN" : "ES"}
+                </span>
               </button>
             </div>
           </header>
@@ -343,9 +392,14 @@ export default function Portfolio() {
           {/* Right Column - Scrollable Content */}
           <main className="pt-24 lg:w-1/2 lg:py-24">
             {/* About Section */}
-            <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+            <section
+              id="about"
+              className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            >
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">{t.nav.about}</h2>
+                <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
+                  {t.nav.about}
+                </h2>
               </div>
               <div>
                 <p className="mb-4 leading-relaxed">{t.hero.description}</p>
@@ -363,7 +417,10 @@ export default function Portfolio() {
             </section>
 
             {/* Experience Section */}
-            <section id="experience" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+            <section
+              id="experience"
+              className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            >
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
                   {t.experience.title}
@@ -397,7 +454,10 @@ export default function Portfolio() {
                               </li>
                             ))}
                           </ul>
-                          <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
+                          <ul
+                            className="mt-2 flex flex-wrap"
+                            aria-label="Technologies used"
+                          >
                             {job.tech.map((tech) => (
                               <li key={tech} className="mr-1.5 mt-2">
                                 <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
@@ -415,7 +475,10 @@ export default function Portfolio() {
             </section>
 
             {/* Skills Section */}
-            <section id="skills" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+            <section
+              id="skills"
+              className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            >
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
                   {t.skills.title}
@@ -428,17 +491,25 @@ export default function Portfolio() {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.languages.map((skill) => (
-                      <span key={skill} className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0">
+                      <span
+                        key={skill}
+                        className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                      >
                         {skill}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-200 mb-3">Frameworks</h3>
+                  <h3 className="text-sm font-semibold text-slate-200 mb-3">
+                    Frameworks
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.frameworks.map((skill) => (
-                      <span key={skill} className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0">
+                      <span
+                        key={skill}
+                        className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -450,7 +521,10 @@ export default function Portfolio() {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.databases.map((skill) => (
-                      <span key={skill} className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0">
+                      <span
+                        key={skill}
+                        className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -462,7 +536,10 @@ export default function Portfolio() {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.technologies.map((skill) => (
-                      <span key={skill} className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0">
+                      <span
+                        key={skill}
+                        className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -474,7 +551,10 @@ export default function Portfolio() {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.tools.map((skill) => (
-                      <span key={skill} className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0">
+                      <span
+                        key={skill}
+                        className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -486,7 +566,10 @@ export default function Portfolio() {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.practices.map((skill) => (
-                      <span key={skill} className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0">
+                      <span
+                        key={skill}
+                        className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -496,7 +579,10 @@ export default function Portfolio() {
             </section>
 
             {/* Projects Section */}
-            <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+            <section
+              id="projects"
+              className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            >
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
                   {t.projects.title}
@@ -526,8 +612,13 @@ export default function Portfolio() {
                               </a>
                             </div>
                           </h3>
-                          <p className="mt-2 text-sm leading-normal">{project.description}</p>
-                          <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
+                          <p className="mt-2 text-sm leading-normal">
+                            {project.description}
+                          </p>
+                          <ul
+                            className="mt-2 flex flex-wrap"
+                            aria-label="Technologies used"
+                          >
                             {project.tech.map((tech) => (
                               <li key={tech} className="mr-1.5 mt-2">
                                 <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
@@ -545,7 +636,10 @@ export default function Portfolio() {
             </section>
 
             {/* Education Section */}
-            <section id="education" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+            <section
+              id="education"
+              className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            >
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
                   {t.education.title}
@@ -565,7 +659,9 @@ export default function Portfolio() {
                         </span>
                       </div>
                     </h3>
-                    <p className="mt-2 text-sm leading-normal">Instituto Tecnológico de Iztapalapa I</p>
+                    <p className="mt-2 text-sm leading-normal">
+                      Instituto Tecnológico de Iztapalapa I
+                    </p>
                     <p className="text-sm text-slate-500">CDMX, México</p>
                   </div>
                 </div>
@@ -603,5 +699,5 @@ export default function Portfolio() {
         </div>
       </div>
     </div>
-  )
+  );
 }

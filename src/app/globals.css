@@ -133,6 +133,10 @@ html {
 
 @media (min-width: 1024px) {
   .group:hover .absolute {
-    background: radial-gradient(600px at var(--mouse-x) var(--mouse-y), rgba(29, 78, 216, 0.15), transparent 80%);
+    background: radial-gradient(
+      600px at var(--mouse-x) var(--mouse-y),
+      rgba(29, 78, 216, 0.15),
+      transparent 80%
+    );
   }
 }
