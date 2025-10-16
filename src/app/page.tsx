@@ -236,6 +236,8 @@ const skills = {
   practices: ["Agile", "Scrum", "SOLID", "TDD"],
 };
 
+const sections = ["about", "experience", "skills", "projects", "education"] as const;
+
 export default function Portfolio() {
   const [lang, setLang] = useState<"es" | "en">("en");
   const [activeSection, setActiveSection] = useState("about");
@@ -244,33 +246,28 @@ export default function Portfolio() {
   const proj = projects[lang];
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        "about",
-        "experience",
-        "skills",
-        "projects",
-        "education",
-      ];
-      const scrollPosition = window.scrollY + 200;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-            break;
-          }
+        if (visible?.target?.id) {
+          setActiveSection(visible.target.id);
         }
+      },
+      {
+        rootMargin: "-40% 0px -50% 0px",
+        threshold: 0.1,
       }
-    };
+    );
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -298,13 +295,7 @@ export default function Portfolio() {
                 aria-label="In-page jump links"
               >
                 <ul className="mt-16 w-max">
-                  {[
-                    "about",
-                    "experience",
-                    "skills",
-                    "projects",
-                    "education",
-                  ].map((section) => (
+                  {sections.map((section) => (
                     <li key={section}>
                       <button
                         onClick={() => scrollToSection(section)}
