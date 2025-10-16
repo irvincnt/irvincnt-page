@@ -237,7 +237,7 @@ const skills = {
 };
 
 export default function Portfolio() {
-  const [lang, setLang] = useState<"es" | "en">("es");
+  const [lang, setLang] = useState<"es" | "en">("en");
   const [activeSection, setActiveSection] = useState("about");
   const t = translations[lang];
   const exp = experiences[lang];
@@ -410,8 +410,8 @@ export default function Portfolio() {
                 </p>
                 <p className="leading-relaxed">
                   {lang === "es"
-                    ? "Cuando no estoy programando, generalmente estoy escalando, jugando tenis, pasando tiempo con mi esposa y dos gatos, o buscando semillas de Korok."
-                    : "When I'm not coding, I'm usually climbing, playing tennis, hanging out with my wife and two cats, or searching for Korok seeds."}
+                    ? "Cuando no estoy programando, generalmente estoy escalando, jugando tenis, pasando tiempo con mi esposa e hija, o aprendiendo un idioma en Duolingo."
+                    : "When I'm not coding, I'm usually climbing, playing tennis, hanging out with my wife and daughter, or learning a language on Duolingo."}
                 </p>
               </div>
             </section>
