@@ -17,8 +17,8 @@ export function About({ lang, description, title }: AboutProps) {
           {title}
         </h2>
       </div>
-      <div>
-        <p className="mb-4 leading-relaxed">{description}</p>
+      <div className="relative z-10">
+        <p className="mb-4 leading-relaxed text-slate-300">{description}</p>
         <p className="mb-4 leading-relaxed">
           {lang === "es"
             ? "Mi enfoque principal en estos días es construir productos accesibles e inclusivos, así como experiencias digitales en Kapitalizer. También disfruto escribir sobre desarrollo web y compartir conocimientos con la comunidad."
@@ -110,7 +110,7 @@ export function Skills({ title, groups, lang }: SkillsProps) {
   return (
     <section
       id="skills"
-      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24 relative z-10"
     >
       <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
         <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
@@ -126,7 +126,7 @@ export function Skills({ title, groups, lang }: SkillsProps) {
             {groups.languages.map((skill) => (
               <span
                 key={skill}
-                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0 rounded-full px-3 py-1 text-xs font-medium leading-5"
               >
                 {skill}
               </span>
@@ -141,7 +141,7 @@ export function Skills({ title, groups, lang }: SkillsProps) {
             {groups.frameworks.map((skill) => (
               <span
                 key={skill}
-                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0 rounded-full px-3 py-1 text-xs font-medium leading-5"
               >
                 {skill}
               </span>
@@ -156,7 +156,7 @@ export function Skills({ title, groups, lang }: SkillsProps) {
             {groups.databases.map((skill) => (
               <span
                 key={skill}
-                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0 rounded-full px-3 py-1 text-xs font-medium leading-5"
               >
                 {skill}
               </span>
@@ -171,7 +171,7 @@ export function Skills({ title, groups, lang }: SkillsProps) {
             {groups.technologies.map((skill) => (
               <span
                 key={skill}
-                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0 rounded-full px-3 py-1 text-xs font-medium leading-5"
               >
                 {skill}
               </span>
@@ -186,7 +186,7 @@ export function Skills({ title, groups, lang }: SkillsProps) {
             {groups.tools.map((skill) => (
               <span
                 key={skill}
-                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0 rounded-full px-3 py-1 text-xs font-medium leading-5"
               >
                 {skill}
               </span>
@@ -201,7 +201,7 @@ export function Skills({ title, groups, lang }: SkillsProps) {
             {groups.practices.map((skill) => (
               <span
                 key={skill}
-                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0"
+                className="bg-teal-400/10 text-teal-300 hover:bg-teal-400/20 border-0 rounded-full px-3 py-1 text-xs font-medium leading-5"
               >
                 {skill}
               </span>

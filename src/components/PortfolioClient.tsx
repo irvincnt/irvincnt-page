@@ -85,7 +85,7 @@ export default function PortfolioClient() {
             <Projects title={t.projects.title} items={proj} />
             <Education title={t.education.title} degree={t.education.degree} />
 
-            <footer className="max-w-md pb-16 text-sm text-slate-500 sm:pb-0">
+            <footer className="max-w-md pb-16 text-sm text-slate-500 sm:pb-0 relative z-10">
               <p>
                 {t.footer}{" "}
                 {lang === "es"
@@ -108,7 +108,14 @@ export default function PortfolioClient() {
                 >
                   Tailwind CSS
                 </a>
-                .
+                , {lang === "es" ? "desplegado en" : "deployed on"} <a href="https://vercel.com/" className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300" target="_blank" rel="noreferrer noopener">Vercel</a>.
+                <a
+                  href="https://vercel.com/"
+                  className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                   </a>
               </p>
             </footer>
           </main>
