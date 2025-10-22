@@ -2,6 +2,7 @@
 
 import { Github, Linkedin, Mail, Phone, Globe, Instagram } from "lucide-react";
 import type { Lang, Translations } from "@/lib/content";
+import GlitchText from "./GlitchText";
 
 type HeaderProps = {
   lang: Lang;
@@ -23,9 +24,15 @@ export default function Header({
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 relative z-10">
       <div>
-        <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+        
+        <GlitchText
+          speed={1}
+          enableShadows={true}
+          enableOnHover={true}
+          className=''
+        >
           Irvin Giovanni Contreras García
-        </h1>
+        </GlitchText>
         <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
           {t.hero.title}
         </h2>
