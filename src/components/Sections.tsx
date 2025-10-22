@@ -21,13 +21,13 @@ export function About({ lang, description, title }: AboutProps) {
         <p className="mb-4 leading-relaxed text-slate-300 relative z-10">{description}</p>
         <p className="mb-4 leading-relaxed relative z-10">
           {lang === "es"
-            ? "Mi enfoque principal en estos días es construir productos accesibles e inclusivos, así como experiencias digitales en Kapitalizer. También disfruto escribir sobre desarrollo web y compartir conocimientos con la comunidad."
-            : "My main focus these days is building accessible and inclusive products and digital experiences at Kapitalizer. I also enjoy writing about web development and sharing knowledge with the community."}
+            ? "Mi enfoque principal en estos días es construir productos accesibles y funcionales, así como experiencias digitales. También disfruto escribir sobre desarrollo web y compartir conocimientos."
+            : "My main focus these days is building accessible and functional products and digital experiences. I also enjoy writing about web development and sharing knowledge."}
         </p>
         <p className="leading-relaxed relative z-10">
           {lang === "es"
-            ? "Cuando no estoy programando, generalmente estoy escalando, jugando tenis, pasando tiempo con mi esposa e hija, o aprendiendo un idioma en Duolingo."
-            : "When I'm not coding, I'm usually climbing, playing tennis, hanging out with my wife and daughter, or learning a language on Duolingo."}
+            ? "Cuando no estoy programando, generalmente estoy viendo series, tomando fotografías, pasando tiempo con mi esposa e hija o aprendiendo un idioma en Duolingo."
+            : "When I'm not coding, I'm usually watching series, taking photos, hanging out with my wife and daughter or learning a language on Duolingo."}
         </p>
       </div>
     </section>

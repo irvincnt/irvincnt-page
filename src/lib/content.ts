@@ -84,10 +84,11 @@ export const experiences: Record<Lang, ExperienceItem[]> = {
       achievements: [
         "Diseñé y desarrollé una plataforma web para la gestión de créditos, centralizando información crítica para diferentes departamentos",
         "Desarrollé un módulo audit log que ayudó a frenar el desvío de dinero en la empresa",
-        "Reduje el tiempo de respuesta de solicitudes de préstamo de 2 semanas a 2 días mediante automatización",
+        "Participé en la planeación, diseño y desarrollo para la automatización en la solicitud de un préstamo, reduje el tiempo de respuesta de solicitudes de préstamo de 2 semanas a 2 días mediante automatización",
+        "Desarrollé un flujo onboarding multiempresa que ayudó a canalizar los leads registrados de acuerdo al tipo de préstamo solicitado por el usuario.",
         "Optimicé landing pages mejorando el performance en un 25% y reduciendo tiempos de despliegue",
       ],
-      tech: ["NextJS", "NestJS", "TypeScript", "PostgreSQL", "AWS", "Vercel"],
+      tech: ["NextJS", "React", "TypeScript", "Strapi", "AWS", "Tailwind"],
     },
     {
       company: "Sngular",
@@ -132,10 +133,11 @@ export const experiences: Record<Lang, ExperienceItem[]> = {
       achievements: [
         "Designed and developed a web platform for credit management, centralizing critical information for different departments",
         "Developed an audit log module that helped prevent money misappropriation in the company",
-        "Reduced loan application response time from 2 weeks to 2 days through automation",
+        "Participated in the planning, design and development of the automation in the loan application, reducing the response time of loan applications from 2 weeks to 2 days through automation",
+        "Developed a multi-company onboarding flow that helped funnel registered leads according to the type of loan requested by the user.",
         "Optimized landing pages improving performance by 25% and reducing deployment times",
       ],
-      tech: ["NextJS", "NestJS", "TypeScript", "PostgreSQL", "AWS", "Vercel"],
+      tech: ["NextJS", "React", "TypeScript", "Strapi", "AWS", "Tailwind"],
     },
     {
       company: "Sngular",
@@ -247,6 +249,8 @@ export const skills: Skills = {
     "AWS",
     "Vercel",
     "NPM",
+    "Docker",
+    "Strapi",
   ],
   practices: ["Agile", "Scrum", "SOLID", "TDD"],
 };
