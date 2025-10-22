@@ -3,6 +3,7 @@
 import { Github, Linkedin, Mail, Phone, Globe, Instagram } from "lucide-react";
 import type { Lang, Translations } from "@/lib/content";
 import GlitchText from "./GlitchText";
+import ScrambledText from './ScrambledText';
 
 type HeaderProps = {
   lang: Lang;
@@ -33,9 +34,17 @@ export default function Header({
         >
           Irvin Giovanni Contreras García
         </GlitchText>
-        <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+        
+        <ScrambledText
+          className="scrambled-text-demo mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
+          radius={100}
+          duration={1.2}
+          speed={0.5}
+          scrambleChars={".:..:.."}
+        >
           {t.hero.title}
-        </h2>
+        </ScrambledText>
+        
         <p className="mt-4 max-w-xs leading-normal">{t.hero.subtitle}</p>
 
         <nav className="nav hidden lg:block" aria-label="In-page jump links">
