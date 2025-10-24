@@ -4,6 +4,8 @@ import { Github, Linkedin, Mail, Phone, Globe, Instagram } from "lucide-react";
 import type { Lang, Translations } from "@/lib/content";
 import GlitchText from "./GlitchText";
 import ScrambledText from './ScrambledText';
+import CVDownload from '@/components/CVDownload';
+import { experiences, projects, skills, myContacts } from '@/lib/content';
 
 type HeaderProps = {
   lang: Lang;
@@ -130,6 +132,11 @@ export default function Header({
             {lang === "es" ? "EN" : "ES"}
           </span>
         </button>
+        <CVDownload 
+          lang={lang}
+          t={t}
+          data={{ experiences: experiences[lang], projects: projects[lang], skills, contacts: myContacts, about: t.about }}
+        />
       </div>
     </header>
   );

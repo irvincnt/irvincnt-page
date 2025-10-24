@@ -13,8 +13,11 @@ export const translations = {
       greeting: "Hola, soy",
       title: "Sr Frontend Developer",
       subtitle: "Construyo experiencias web excepcionales",
-      description:
-        "Más de 8 años de experiencia como Desarrollador de Software. Lideré el desarrollo Frontend en Kapitalizer, logrando entregables más completos en cada sprint, un 25% en rendimiento web y una automatización de trabajos para diferentes equipos dentro de la compañía.",
+    },
+    about: {
+      description_one: "Más de 8 años de experiencia como Desarrollador de Software. Lideré el desarrollo Frontend en Kapitalizer, logrando entregables más completos en cada sprint, un 25% en rendimiento web y una automatización de trabajos para diferentes equipos dentro de la compañía.",
+      description_two: "Mi enfoque principal en estos días es construir productos accesibles y funcionales, así como experiencias digitales.",
+      description_three: "Cuando no estoy programando, generalmente estoy viendo series, tomando fotografías, pasando tiempo con mi esposa e hija o aprendiendo un idioma en Duolingo.",
     },
     experience: {
       title: "Experiencia",
@@ -44,8 +47,11 @@ export const translations = {
       greeting: "Hi, I'm",
       title: "Sr Frontend Developer",
       subtitle: "I build exceptional web experiences",
-      description:
-        "Over 8 years of experience as a Software Developer. Led Frontend development at Kapitalizer, achieving more complete deliverables in each sprint, 25% improvement in web performance, and work automation for different teams within the company.",
+    },
+    about: {
+      description_one: "Over 8 years of experience as a Software Developer. Led Frontend development at Kapitalizer, achieving more complete deliverables in each sprint, 25% improvement in web performance, and work automation for different teams within the company.",
+      description_two: "My main focus these days is building accessible and functional products and digital experiences.",
+      description_three: "When I'm not coding, I'm usually watching series, taking photos, hanging out with my wife and daughter or learning a language on Duolingo.",
     },
     experience: {
       title: "Experience",
@@ -82,11 +88,14 @@ export const experiences: Record<Lang, ExperienceItem[]> = {
       role: "Sr Frontend Developer",
       period: "Jul 2022 — Sep 2025",
       achievements: [
-        "Diseñé y desarrollé una plataforma web para la gestión de créditos, centralizando información crítica para diferentes departamentos",
-        "Desarrollé un módulo audit log que ayudó a frenar el desvío de dinero en la empresa",
-        "Participé en la planeación, diseño y desarrollo para la automatización en la solicitud de un préstamo, reduje el tiempo de respuesta de solicitudes de préstamo de 2 semanas a 2 días mediante automatización",
+        "Diseño y desarrollo de una plataforma web para la gestión de créditos, el propósito fue centralizar la información de cada crédito visualizando toda la información importante para una gestión puntual y actualizada para los diferentes departamentos.",
+        "Desarrollé un módulo audit log que ayudó a registrar las acciones y procesos de cada usuario dentro de la empresa, ayudó a frenar el desvío de dinero en la empresa.",
+        "Participé en la planeación, diseño y desarrollo para la automatización en la solicitud de un préstamo, se eliminaron varios procesos manuales e integramos automatización que ayudó a reducir el tiempo de respuesta de 2 semanas a 2 días.",
+        "Planifiqué y actualicé una plataforma web para agregar validaciones y candados por rol a nivel páginas, componentes y funciones.",
         "Desarrollé un flujo onboarding multiempresa que ayudó a canalizar los leads registrados de acuerdo al tipo de préstamo solicitado por el usuario.",
-        "Optimicé landing pages mejorando el performance en un 25% y reduciendo tiempos de despliegue",
+        "Optimicé diferentes landing page de la empresa ayudando en el performance y tiempos de despliegue.",
+        "Implementé un conjunto de métodos y prácticas para escribir, mantener y optimizar código de alta calidad.",
+
       ],
       tech: ["NextJS", "React", "TypeScript", "Strapi", "AWS", "Tailwind"],
     },
@@ -131,13 +140,15 @@ export const experiences: Record<Lang, ExperienceItem[]> = {
       role: "Sr Frontend Developer",
       period: "Jul 2022 — Sep 2025",
       achievements: [
-        "Designed and developed a web platform for credit management, centralizing critical information for different departments",
-        "Developed an audit log module that helped prevent money misappropriation in the company",
-        "Participated in the planning, design and development of the automation in the loan application, reducing the response time of loan applications from 2 weeks to 2 days through automation",
-        "Developed a multi-company onboarding flow that helped funnel registered leads according to the type of loan requested by the user.",
-        "Optimized landing pages improving performance by 25% and reducing deployment times",
+        "Design and development of a web platform for loan management. The purpose was to centralize the information for each loan, displaying all the important information for timely and up-to-date management across different departments.",
+        "I developed an audit log module that helped record the actions and processes of each user within the company, helping to prevent misappropriation of funds within the company.",
+        "I participated in the planning, design, and development of a loan application automation process. Several manual processes were eliminated and we integrated automation, which helped reduce the response time from two weeks to two days.",
+        "I planned and updated a web platform to add role-based validations and locks at the page, component, and function levels.",
+        "I developed a multi-company onboarding flow that helped channel registered leads according to the type of loan requested by the user.",
+        "I optimized various landing pages across the company, helping with performance and deployment times.",
+        "I implemented a set of methods and practices to write, maintain, and optimize high-quality code.",
       ],
-      tech: ["NextJS", "React", "TypeScript", "Strapi", "AWS", "Tailwind"],
+      tech: ["NextJS", "React", "Vite", "React Admin", "TypeScript", "Strapi", "AWS", "Tailwind"],
     },
     {
       company: "Sngular",
@@ -220,37 +231,28 @@ export const projects: Record<Lang, ProjectItem[]> = {
 
 export type Skills = {
   languages: string[];
-  frameworks: string[];
-  databases: string[];
-  technologies: string[];
-  tools: string[];
-  practices: string[];
+  librariesandframeworks: string[];
+  toolsandplatforms: string[];
 };
 
 export const skills: Skills = {
   languages: ["JavaScript", "TypeScript", "HTML", "CSS", "SQL", "NoSQL"],
-  frameworks: ["NextJS", "NestJS", "React", "NodeJS", "LitElement", "Polymer2"],
-  databases: ["MongoDB", "PostgreSQL", "MySQL"],
-  technologies: [
-    "Redux",
-    "React Query",
-    "Tailwind",
+  librariesandframeworks: ["React", "NextJS", "NestJS", "NodeJS", "LitElement", "Tailwind", "Redux",
+    "ReactQuery",
+    "Zustand",
     "Sass",
     "Shadcn",
     "APIs",
-    "Hooks",
-  ],
-  tools: [
-    "Git",
-    "GitHub",
-    "Bitbucket",
-    "Figma",
-    "Jira",
-    "AWS",
-    "Vercel",
-    "NPM",
-    "Docker",
-    "Strapi",
-  ],
-  practices: ["Agile", "Scrum", "SOLID", "TDD"],
+    "Hooks" ],
+  toolsandplatforms: ["Git", "GitHub", "Bitbucket", "Figma", "Jira", "AWS", "Vercel", "NPM", "Docker", "Strapi", "Webpack", "Vite"],
 };
+
+export const myContacts = {
+  email: 'irvincnt93@gmail.com',
+  phone: '5612695199',
+  github: 'github.com/irvincnt',
+  website: 'irvincnt.com',
+  linkedin: 'https://www.linkedin.com/in/irvin-contreras-10273b104/',
+  instagram: 'https://www.instagram.com/irvincnt',
+  x: 'https://x.com/IrvinCnt',
+}
